@@ -9,19 +9,21 @@ Instead of duplicating templates across repositories, projects fetch them from t
 ## Repository Layout
 
 ```
-adr/
-  README.md     ADR conventions (number range, status values, index format)
-  template.md   Skeleton for a new ADR
-issues/
-  README.md     Known-Issue conventions (lifecycle, index format)
-  template.md   Skeleton for a new issue
+docs/
+  adr/
+    README.md     ADR conventions (number range, status values, index format)
+    template.md   Skeleton for a new ADR
+  issues/
+    README.md     Known-Issue conventions (lifecycle, index format)
+    template.md   Skeleton for a new issue
+  puml/           PlantUML snippets and includes (language-neutral)
 ```
 
 ## How Consuming Projects Use This
 
 1. Fetch the templates and conventions from this repo (raw URLs):
-   - ADRs: `https://raw.githubusercontent.com/<owner>/dev-templates/main/adr/template.md` and `adr/README.md`
-   - Issues: `https://raw.githubusercontent.com/<owner>/dev-templates/main/issues/template.md` and `issues/README.md`
+   - ADRs: `https://raw.githubusercontent.com/<owner>/dev-templates/main/docs/adr/template.md` and `docs/adr/README.md`
+   - Issues: `https://raw.githubusercontent.com/<owner>/dev-templates/main/docs/issues/template.md` and `docs/issues/README.md`
 2. Copy the templates into the project as `docs/adr/template.md` and `docs/issues/template.md`; adopt the conventions from the READMEs.
 3. Create documents from the templates and maintain the index tables as described in the respective READMEs.
 
@@ -33,8 +35,8 @@ Add this to the consuming project's `AGENTS.md` so agents handle this correctly:
 ## Documentation
 
 - ADRs and Known Issues follow the templates from https://github.com/<owner>/dev-templates:
-  - ADRs: fetch `adr/template.md` and the conventions from `adr/README.md`
-  - Issues: fetch `issues/template.md` and the conventions from `issues/README.md`
+  - ADRs: fetch `docs/adr/template.md` and the conventions from `docs/adr/README.md`
+  - Issues: fetch `docs/issues/template.md` and the conventions from `docs/issues/README.md`
 - Copy the templates to `docs/adr/` and `docs/issues/` and fill them in.
 - Write all content in the project language; the structure follows the template.
 ```
