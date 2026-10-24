@@ -16,7 +16,10 @@ docs/
   issues/
     README.md     Known-Issue conventions (lifecycle, index format)
     template.md   Skeleton for a new issue
-  puml/           PlantUML snippets and includes (language-neutral)
+  puml/
+    README.md     How to embed PlantUML diagrams (include convention + example)
+    style.puml    Global skinparams for a consistent diagram look
+    example_components.puml  Demo of reusable diagram artifacts (components, ports, actors)
 ```
 
 ## How Consuming Projects Use This
@@ -24,7 +27,8 @@ docs/
 1. Fetch the templates and conventions from this repo (raw URLs):
    - ADRs: `https://raw.githubusercontent.com/<owner>/dev-templates/main/docs/adr/template.md` and `docs/adr/README.md`
    - Issues: `https://raw.githubusercontent.com/<owner>/dev-templates/main/docs/issues/template.md` and `docs/issues/README.md`
-2. Copy the templates into the project as `docs/adr/template.md` and `docs/issues/template.md`; adopt the conventions from the READMEs.
+   - PlantUML: `https://raw.githubusercontent.com/<owner>/dev-templates/main/docs/puml/style.puml` and the conventions from `docs/puml/README.md`
+2. Copy the templates into the project as `docs/adr/template.md` and `docs/issues/template.md`; adopt the conventions from the READMEs. Put `style.puml` into the project's `docs/puml/` and define reusable diagram artifacts in `docs/puml/components.puml` (see the PlantUML README for the include convention).
 3. Create documents from the templates and maintain the index tables as described in the respective READMEs.
 
 ### Suggested AGENTS.md Snippet
@@ -34,11 +38,13 @@ Add this to the consuming project's `AGENTS.md` so agents handle this correctly:
 ```markdown
 ## Documentation
 
-- ADRs and Known Issues follow the templates from https://github.com/<owner>/dev-templates:
+- ADRs, Known Issues, and PlantUML diagrams follow the templates from https://github.com/<owner>/dev-templates:
   - ADRs: fetch `docs/adr/template.md` and the conventions from `docs/adr/README.md`
   - Issues: fetch `docs/issues/template.md` and the conventions from `docs/issues/README.md`
-- Copy the templates to `docs/adr/` and `docs/issues/` and fill them in.
+  - PlantUML: fetch `docs/puml/style.puml` and the include conventions from `docs/puml/README.md`; define shared artifacts in `docs/puml/components.puml`
+- Copy the templates to `docs/adr/`, `docs/issues/`, and `docs/puml/` and fill them in.
 - Write all content in the project language; the structure follows the template.
+- PlantUML diagrams only define relationships between the artifacts included from `docs/puml/`.
 ```
 
 ## Language Handling

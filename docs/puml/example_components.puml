@@ -1,0 +1,23 @@
+frame system {
+
+    component "mail/server" as server {
+        port "smtp" as p_smtp
+        port "imaps" as p_imaps
+        port "sieve" as p_sieve
+    }
+    component "mail/postfixadmin" as postfixadmin {
+        port "http" as p_postfixadmin_http
+    }
+    component "mail/roundcube" as roundcube {
+        port "http" as p_roundcube_http
+    }
+    component "mariadb" as mariadb
+    database "Postfixadmin DB" as db_postfixadmin
+    database "Roundcube DB" as db_roundcube
+
+}
+
+component "External Mail Relay" as act_relay
+actor "Mail User" as act_mail_user
+actor "Mail Admin" as act_mail_admin
+actor "Webmail User" as act_webmail_user
