@@ -1,0 +1,28 @@
+%%{init: {"theme":"neutral","themeVariables":{"fontSize":"12px"}}}%%
+flowchart LR
+    subgraph system
+        direction TB
+        server["mail/server"]
+        postfixadmin["mail/postfixadmin"]
+        roundcube["mail/roundcube"]
+        mariadb[("mariadb")]
+        db_postfixadmin[("Postfixadmin DB")]
+        db_roundcube[("Roundcube DB")]
+    end
+
+    act_relay["External Mail Relay"]
+    act_mail_user(["Mail User"])
+    act_mail_admin(["Mail Admin"])
+    act_webmail_user(["Webmail User"])
+
+    act_webmail_user --> roundcube
+    act_mail_admin --> postfixadmin
+    act_mail_user --> server
+    act_relay <--> server
+
+    roundcube -->|"use mailbox (R/W)"| server
+    roundcube -->|"own data (R/W)"| db_roundcube
+    postfixadmin -->|"domains and addresses (R/W)"| db_postfixadmin
+    server -->|"domains and addresses (R)"| db_postfixadmin
+    mariadb -->|manages| db_postfixadmin
+    mariadb -->|manages| db_roundcube

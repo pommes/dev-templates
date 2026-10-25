@@ -7,12 +7,12 @@ ADRs document **decisions**, not ongoing analyses or incident reconstructions �
 ## Number Range
 
 - `0000–0999` Architecture and operations decisions (active)
-- Numbers are **not reused** – when an ADR expires, it is not deleted but marked with status `Superseded by ADR-XXXX`.
+- Numbers are **not reused** – when an ADR expires, it is not deleted but marked with status `Superseded by ADR-XXXX` and its file is moved to `superseded/NNNN-short-title.md`. ADRs with status `Deprecated` (no direct successor) remain in the main folder. Update the index link and any references from other documents when moving (relative links break otherwise).
 - Analyses / incident reconstructions do not belong in ADRs. They belong in `analysis/` (tempus, Confluence-like) – ADRs link there once the context has been derived.
 
 ## Status Values
 
-`Proposed` → `Accepted` / `Rejected` → (`Superseded by ADR-XXXX`) / (`Deprecated`)
+`Proposed` → `Accepted` / `Rejected` → (`Superseded by ADR-XXXX`, file moves to `superseded/`) / (`Deprecated`, remains in place)
 
 ## Overview
 
