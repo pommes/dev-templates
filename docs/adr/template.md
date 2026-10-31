@@ -1,4 +1,4 @@
-# NNNN: <Short Title>
+# KEY-ADR-NNNN: <Short Title>
 
 - **Status:** Proposed
 - **Date:** YYYY-MM-DD

@@ -1,8 +1,8 @@
-# NNNN: <Short Title>
+# KEY-ISS-NNNN: <Short Title>
 
 - **Status:** Open
 - **Priority:** Low / Medium / High
-- **Related ADR:** – / ADR-XXXX
+- **Related ADR:** – / KEY-ADR-NNNN
 - **Created:** YYYY-MM-DD
 
 ## Symptom / Impact
@@ -29,4 +29,4 @@ What should be done when the problem is tackled? (Concrete actions, triggers, co
 
 ## Re-openings
 
-- (Re-opening #1: YYYY-MM-DD, reason)
+- (Re-opening KEY-ISS-NNNN #1: YYYY-MM-DD, reason)

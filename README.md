@@ -50,7 +50,8 @@ Add this to the consuming project's `AGENTS.md` so agents handle this correctly:
   - PlantUML: fetch `docs/puml/style.puml` and the include conventions from `docs/puml/README.md`; define shared artifacts in `docs/puml/components.puml`
   - Mermaid: fetch `docs/mermaid/style.snippet` and the conventions from `docs/mermaid/README.md`; start every diagram with its `%%{init}%%` directive
 - Copy the templates to `docs/adr/`, `docs/issues/`, `docs/puml/`, and `docs/mermaid/` and fill them in.
-- Write all content in the project language; the structure follows the template.
+- Define a unique project key (three uppercase letters, e.g. `XYZ`) in this `AGENTS.md` and replace `KEY` below with it. Document IDs are `KEY-ISS-NNNN` for issues and `KEY-ADR-NNNN` for ADRs; they appear in titles, index tables, and references, not in file names.
+- Define the project language in this `AGENTS.md`, individually for documentation (issues, ADRs, general adoc/md/text documents), program code, and code comments; write content accordingly, the structure follows the template.
 - PlantUML diagrams only define relationships between the artifacts included from `docs/puml/`. Mermaid diagrams start with the `%%{init}%%` directive and reuse the artifact vocabulary from `docs/mermaid/`.
 ```
 
